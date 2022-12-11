@@ -1,0 +1,24 @@
+{
+  "name": "Go To GitHub from leankit",
+  "description": "appends go to github button in leankit",
+  "version": "1.1",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://core3.leankit.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "/images/leankit16.png",
+    "32": "/images/leankit32.png",
+    "48": "/images/leankit48.png",
+    "128": "/images/leankit128.png"
+  },
+  "action": {
+    "default_icon": "/images/leankit48.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"]
+}

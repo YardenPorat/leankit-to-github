@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "webextensions": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "rules": {
+    "no-console": "error",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "no-duplicate-imports": "error",
+    "no-restricted-imports": ["error", "mocha"],
+    "no-empty-pattern": "off"
+  }
+}
