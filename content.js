@@ -46,6 +46,9 @@ function addGithubLinks() {
     }
 
     chrome.storage.sync.get(['gitHubRepo'], function ({ gitHubRepo }) {
+        if (!gitHubRepo) {
+            return;
+        }
         for (const card of cards) {
             const matches = card.textContent?.match(/#\d\d\d\d\d*/g);
 
@@ -56,9 +59,7 @@ function addGithubLinks() {
             for (const match of matches) {
                 const githubLink = document.createElement('a');
                 githubLink.innerText = match;
-                githubLink.href = `https://github.com/wixplosives/${gitHubRepo}/issues/${match.slice(
-                    1
-                )}`;
+                githubLink.href = `https://github.com/${gitHubRepo}/issues/${match.slice(1)}`;
                 githubLink.target = '_blank';
                 githubLink.classList.add(
                     'cardIcons-icon',
