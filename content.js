@@ -50,7 +50,7 @@ function addGithubLinks() {
             return;
         }
         for (const card of cards) {
-            const matches = card.textContent?.match(/#\d\d\d\d\d*/g);
+            const matches = card.textContent?.match(/#\d\d*/g);
 
             if (!matches || !matches.length) {
                 continue;
